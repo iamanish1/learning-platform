@@ -37,9 +37,15 @@ export const API_ENDPOINTS = {
   COMMUNITY: {
     LIST: '/communities',
     DETAIL: (id) => `/communities/${id}`,
+    CREATE: '/communities',
+    UPDATE: (id) => `/communities/${id}`,
+    JOIN: (id) => `/communities/${id}/join`,
+    LEAVE: (id) => `/communities/${id}/leave`,
     DISCUSSIONS: (id) => `/communities/${id}/discussions`,
     ANNOUNCEMENTS: (id) => `/communities/${id}/announcements`,
     MEMBERS: (id) => `/communities/${id}/members`,
+    SETTINGS: (id) => `/communities/${id}/settings`,
+    CHAT: (id) => `/communities/${id}/chat`,
   },
 };
 
@@ -60,7 +66,13 @@ export const SOCKET_EVENTS = {
   },
   // Community
   COMMUNITY: {
+    JOIN: 'community:join',
+    LEAVE: 'community:leave',
     CHAT_MESSAGE: 'community:chat:message',
+    TYPING: 'community:typing',
+    MEMBER_JOINED: 'community:member:joined',
+    MEMBER_LEFT: 'community:member:left',
+    ANNOUNCEMENT: 'community:announcement',
     DISCUSSION_UPDATE: 'community:discussion:update',
     COLLABORATION: 'community:collaboration',
   },

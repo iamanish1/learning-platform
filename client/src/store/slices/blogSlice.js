@@ -5,12 +5,20 @@ const initialState = {
   activePost: null,
   comments: [],
   drafts: [],
+  projects: [],
+  documentation: [],
+  trendingTags: [],
+  featuredPosts: [],
+  authors: [],
   loading: false,
   error: null,
   filters: {
     category: 'all',
     tag: 'all',
     search: '',
+    type: 'all', // 'all', 'article', 'project', 'documentation', 'opinion'
+    sortBy: 'latest', // 'latest', 'trending', 'popular', 'most_commented'
+    author: 'all',
   },
 };
 
@@ -79,6 +87,21 @@ const blogSlice = createSlice({
     setFilters: (state, action) => {
       state.filters = { ...state.filters, ...action.payload };
     },
+    setProjects: (state, action) => {
+      state.projects = action.payload;
+    },
+    setDocumentation: (state, action) => {
+      state.documentation = action.payload;
+    },
+    setTrendingTags: (state, action) => {
+      state.trendingTags = action.payload;
+    },
+    setFeaturedPosts: (state, action) => {
+      state.featuredPosts = action.payload;
+    },
+    setAuthors: (state, action) => {
+      state.authors = action.payload;
+    },
   },
 });
 
@@ -100,6 +123,11 @@ export const {
   updateDraft,
   deleteDraft,
   setFilters,
+  setProjects,
+  setDocumentation,
+  setTrendingTags,
+  setFeaturedPosts,
+  setAuthors,
 } = blogSlice.actions;
 
 export default blogSlice.reducer;

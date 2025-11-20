@@ -199,8 +199,8 @@ const Events = () => {
                 <Users className="w-5 h-5 text-gray-600" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-gray-900">{stats.totalParticipants}</div>
-                <div className="text-xs text-gray-600">Participants</div>
+                <div className="text-2xl font-bold text-gray-900">{stats.participants}</div>
+                <div className="text-xs text-gray-600">Total Participants</div>
               </div>
             </div>
           </motion.div>
