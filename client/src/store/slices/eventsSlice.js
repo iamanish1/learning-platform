@@ -9,8 +9,11 @@ const initialState = {
   loading: false,
   error: null,
   filters: {
-    status: 'all', // 'all', 'upcoming', 'active', 'past'
-    type: 'all', // 'all', 'hackathon', 'challenge', 'workshop'
+    status: 'all', // 'all', 'upcoming', 'live', 'past'
+    type: 'all', // 'all', 'hackathon', 'challenge', 'workshop', 'competition'
+    category: 'all', // 'all' or specific category name
+    search: '', // search query string
+    pricing: 'all', // 'all', 'free', 'paid'
   },
 };
 

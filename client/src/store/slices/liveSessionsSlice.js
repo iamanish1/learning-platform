@@ -12,6 +12,8 @@ const initialState = {
   filters: {
     type: 'all', // 'all', 'free', 'paid'
     status: 'all', // 'all', 'upcoming', 'live', 'past'
+    category: 'all', // 'all' or specific category name
+    search: '', // search query string
   },
 };
 

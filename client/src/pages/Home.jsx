@@ -49,7 +49,7 @@ const Home = () => {
       {/* Free Resources */}
       <Suspense fallback={<div className="py-20"><LoadingSpinner /></div>}>
         <FreeResources />
-      </Suspense>sign congratula
+      </Suspense>
 
       {/* FAQ Section */}
       <Suspense fallback={<div className="py-20"><LoadingSpinner /></div>}>
