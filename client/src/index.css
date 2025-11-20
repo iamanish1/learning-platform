@@ -38,6 +38,24 @@
   .card-hover {
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
+
+  /* Glassmorphism effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-gray-900/80 backdrop-blur-lg border border-white/10;
+  }
+
+  /* Enhanced gradient backgrounds */
+  .gradient-auth {
+    @apply bg-gradient-to-br from-blue-50 via-white to-purple-50;
+  }
+
+  .gradient-primary-soft {
+    @apply bg-gradient-to-br from-primary-dark/10 via-primary/10 to-primary-light/10;
+  }
 }
 
 @layer utilities {
@@ -95,5 +113,50 @@
   .scroll-reveal.revealed {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Form input animations */
+  .input-focus-ring {
+    @apply focus:ring-2 focus:ring-primary/20 focus:border-primary;
+  }
+
+  /* Smooth transitions for form elements */
+  .form-transition {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  /* Floating label animation */
+  @keyframes floatUp {
+    from {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-20px) scale(0.85);
+      opacity: 0.7;
+    }
+  }
+
+  .animate-float-up {
+    animation: floatUp 0.2s ease-out forwards;
+  }
+
+  /* Button pulse animation */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-dark to-primary bg-clip-text text-transparent;
   }
 }

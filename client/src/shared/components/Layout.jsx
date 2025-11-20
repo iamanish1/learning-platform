@@ -4,12 +4,14 @@ import Navigation from './Navigation';
 const Layout = ({ children }) => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
+  const showFooter = !isHomePage && !isAuthPage;
 
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
-      {isHomePage ? (
-        // Full-width layout for landing page
+      {isHomePage || isAuthPage ? (
+        // Full-width layout for landing page and auth pages
         <main className="w-full">
           {children}
         </main>
@@ -19,7 +21,7 @@ const Layout = ({ children }) => {
           {children}
         </main>
       )}
-      {!isHomePage && (
+      {showFooter && (
         <footer className="bg-white border-t border-gray-200 mt-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="text-center text-gray-600">
